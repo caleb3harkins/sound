@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mock Soundboard</title>
+</head>
+<body style="background-color: black; display: flex; justify-content: center; align-items: center; height: 100vh;"> 
+
+   
+    <div class="media-player" style="width: 300px; height: 400px; position: relative; text-align: center; background-image: url('WAR.jpg'); background-size: cover; background-position: center; border-radius: 10px; overflow: hidden; padding-top: 40px; color: white;">
+        
+        
+        <div class="track-info">
+            <div class="track-details">
+                <p class="track-title" style="font-size: 2; font-weight: bold; color: white;">Track Title For The Imperium</p>
+                <p class="artist-name" style="font-size: 2; color: #bbb; margin-top: 5px;">Artist: Blood Angles</p>
+            </div>
+        </div>
+
+        
+        <div class="controls" style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); z-index: 2; display: flex; justify-content: center; gap: 10px;">
+            <button class="control-button" id="play" style="background-color: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Play</button>
+            <button class="control-button" id="next" style="background-color: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Next</button>
+            <button class="control-button" id="pause" style="background-color: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Pause</button>
+        </div>
+
+        
+        <label for="volume" style="display: block; margin-top: 20px; font-size: 1rem; color: red;">Volume</label>
+        <input type="range" id="volume" style="width: 100%; margin: 10px 0; background-color: red; border-radius: 5px; transition: background-color 0.3s;" min="0" max="100" value="50">
+
+    </div>
+
+    <script>
+        // Get all control buttons by their class name
+        const buttons = document.querySelectorAll('.control-button');
+
+        // Function to change button background color to red on hover
+        buttons.forEach(button => {
+            button.addEventListener('mouseover', function() {
+                button.style.backgroundColor = 'red'; // Red on hover
+            });
+
+            // Function to reset the background color when the mouse leaves
+            button.addEventListener('mouseout', function() {
+                button.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'; // Original color
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+
